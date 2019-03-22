@@ -44,4 +44,17 @@ module nut_stack(margin=0) {
   }
 }
 
-nut_stack();
+module fillet() {
+  rotate([45,45,0])
+  cube([layer_margin, layer_margin, layer_margin], center=true);
+}
+
+module door_blocker(margin=0) {
+  minkowski() {
+    nut(margin, -nut_inner_diameter);
+
+    fillet();
+  }
+}
+
+door_blocker();
