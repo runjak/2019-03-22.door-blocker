@@ -15,7 +15,7 @@ module nut(margin_outer=0, margin_inner=0) {
   h = nut_height + margin_outer;
 
   angles = [for (i=[0:5]) i * (360 / 6)];
-  coords = [for (th=angles) [r_outer * cos(th), r_outer * sin(th)] ];
+  coords = [for (th=angles) [r_outer * cos(th), r_outer * sin(th)]];
 
   difference() {
     translate([0, 0, -h/2])
@@ -26,10 +26,21 @@ module nut(margin_outer=0, margin_inner=0) {
   }
 }
 
-module nut_stack() {
+module nut_stack(margin=0) {
+  shift = nut_outer_diameter / 2;
+  angles = [for (i=[0:(layer_count - 1)]) i*(360 / 6)];
+  coords = [for (th=angles) [shift * cos(th), shift * sin(th)]];
+
   for(layer=layers) {
     translate([0, 0, layer])
-    nut();
+    nut(margin, -nut_inner_diameter);
+  }
+
+  for(i=[0:(layer_count - 1)]) {
+    c = coords[i];
+
+    translate([c[0], c[1], layers[i]])
+    nut(margin, -nut_inner_diameter);
   }
 }
 
