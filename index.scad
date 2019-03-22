@@ -52,13 +52,18 @@ module fillet() {
 module door_blocker(margin=0) {
   size_x = nut_outer_diameter + 2*layer_margin;
   size_y = size_x * sin(60);
-  size_z = nut_height * layer_count + layer_margin * (layer_count - 1);
+  size_z = nut_height * layer_count + layer_margin * (layer_count + 1);
 
-  resize([size_x, size_y, size_z])
-  minkowski() {
-    nut(0, layer_margin);
+  difference() {
+    translate([0,0,layers[1]])
+    resize([size_x, size_y, size_z])
+    minkowski() {
+      nut(0, layer_margin);
 
-    fillet();
+      fillet();
+    }
+
+    nut_stack(0.5);
   }
 }
 
