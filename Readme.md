@@ -1,12 +1,12 @@
 2019-03-22.door-blocker
 ===
 
-When taking a long walk with some friends in Berlin near some abandoned train tracks we've found three of these big, hevy nuts implicated in holding down train tracks:
+When taking a long walk with some friends in Berlin near some abandoned train tracks we've found three of these big, heavy nuts implicated in holding down train tracks:
 
 ![a single metal nut with dirt and rust on it](./media/20190312_182311.jpg)
 
 I quickly gave in to the impulse to pick these up out of interest for the shape and took them home.
-The next days I spent some time removing most of the dirt using metal brushes and my dremel tool.
+The next days I spent some time removing most of the dirt using metal brushes and my Dremel tool.
 
 The result were three nuts where rust is only left in the indentations and the metal is clearly exposed and visible:
 
@@ -29,3 +29,5 @@ I printed the model lying on its side so that no support would be required. This
 
 ![picture of the printed model with three nuts in it](./media/20190327_204658.jpg)
 ![another picture of the printed model with nuts](./media/20190327_204704.jpg)
+
+The STL model and print settings can be found on the corresponding [Thingiverse page](https://www.thingiverse.com/thing:3529645).
